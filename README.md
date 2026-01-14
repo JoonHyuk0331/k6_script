@@ -5,9 +5,12 @@ loadtest for matchday api server
 .env 파일에 넣고 다음 커맨드를 입력하세요
 .env 파일에 공백이 있어선 안됩니다
 
-
-
 ```
 # .env 파일 내용을 읽어서 k6 실행 시 주입
 export $(cat .env | xargs) && k6 run 실행할자바스크립트파일.js
+```
+
+```
+# K6 웹 대시보드와 같이 본다면 (grafana dashboard를 권장합니다)
+export $(cat .env | xargs) && k6 run --out web-dashboard 실행할자바스크립트파일.js
 ```
